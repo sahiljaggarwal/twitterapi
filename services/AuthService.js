@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
 import nodemailer from 'nodemailer';
+import config from "../config/default"
 import User from '../models/User';
+dotenv.config()
 
 class AuthService {
   // Generate OTP
@@ -16,8 +18,8 @@ class AuthService {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'sahiljaggarwal6@gmail.com', // Your email address
-            pass: 'psemifmkbjgapcnf', // Your email password
+            user: config.gmail, // Your email address
+            pass: config.gmailPassword, // Your email password
           },
           tls: {
             rejectUnauthorized: false,
@@ -26,7 +28,7 @@ class AuthService {
 
     // Define the email content
     const mailOptions = {
-      from: 'sahiljaggarwal6l@example.com',
+      from:  config.gmail,
       to: email,
       subject: 'OTP Verification',
       text: `Your OTP for account verification is: ${otp}`,

@@ -6,5 +6,7 @@ const config = {
     port: process.env.PORT || 6000,
     MONGODB_URL: 'mongodb+srv://haruki:haruki1717@cluster0.bd5satz.mongodb.net/',
     secretKey: 'mysecretkey',
+    gmail: "sahiljaggarwal6@gmail.com",
+    gmailPassword: "psemifmkbjgapcnf"
   };
 export default config;
